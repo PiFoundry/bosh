@@ -18,7 +18,8 @@ RUN apt-get install -y \
 	libreadline-dev \
 	dnsutils \
 	xvfb \
-	realpath
+	realpath \
+	&& apt-get clean
 RUN apt-get install -t wheezy-backports -y \
         jq \
 	&& apt-get clean
