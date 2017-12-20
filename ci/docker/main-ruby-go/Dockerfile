@@ -19,7 +19,9 @@ RUN apt-get install -y \
 	dnsutils \
 	xvfb \
 	jq \
-	realpath \
+	realpath
+RUN apt-get install -t wheezy-backports -y \
+        jq \
 	&& apt-get clean
 
 #global - ruby will need these
