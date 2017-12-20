@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM armv7/armhf-ubuntu_core:14.04
 
 RUN locale-gen en_US.UTF-8
 RUN dpkg-reconfigure locales
