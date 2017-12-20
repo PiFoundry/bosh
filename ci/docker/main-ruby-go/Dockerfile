@@ -20,9 +20,12 @@ RUN apt-get install -y \
 	xvfb \
 	realpath \
 	&& apt-get clean
-RUN apt-get install -t wheezy-backports -y \
-        jq \
-	&& apt-get clean
+RUN cd /tmp \
+        && wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-1.5.tar.gz \
+        && tar xfvz jq-1.5.tar.gz \
+        && cd jq-1.5 \
+        && ./configure && make && sudo make install \
+        && rm -rf /tmp/jq-1.5
 
 #global - ruby will need these
 # Nokogiri dependencies
